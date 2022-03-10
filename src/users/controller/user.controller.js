@@ -50,7 +50,7 @@ export const getAllUsers = async (req, res) => {
 
     res.status(200).json({
       status: "success",
-      size: users.length,
+      number: users.length,
       data: {
         user: users,
       },
