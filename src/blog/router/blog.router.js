@@ -1,4 +1,4 @@
-import express from "express";
+import Express from "express";
 import {
   createBlog,
   getAllBlog,
@@ -7,7 +7,7 @@ import {
   deleteBlog,
 } from "./../controller/blog.Controller.js";
 
-const router = express.Router();
+const router = Express.Router();
 
 router.route("/").get(getAllBlog).post(createBlog);
 router.route("/:id").get(getBlog).delete(deleteBlog).patch(updateBlog);
