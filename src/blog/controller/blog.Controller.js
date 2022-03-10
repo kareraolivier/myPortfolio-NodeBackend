@@ -45,6 +45,7 @@ export const getAllBlog = async (req, res) => {
 
     res.status(200).json({
       status: "all blogs",
+      number: getBlogs.length,
       data: {
         blog: getBlogs,
       },
@@ -63,9 +64,7 @@ export const deleteBlog = async (req, res) => {
 
     res.status(204).json({
       status: "deleted successfully",
-      data: {
-        blog: deleteBlog,
-      },
+      data: null,
     });
   } catch (error) {
     res.status(404).json({
