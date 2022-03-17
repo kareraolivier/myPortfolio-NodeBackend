@@ -7,6 +7,7 @@ export const createUser = async (req, res) => {
   try {
     const newUser = await User.create({
       fullName: req.body.fullName,
+      role: req.body.role,
       email: req.body.email,
       password: await bcrypt.hash(password, 10),
       confirmPassword: req.body.confirmPassword,

@@ -8,7 +8,7 @@ export const createBlog = async (req, res) => {
     });
 
     res.status(201).json({
-      status: "created successfully",
+      status: "success",
       data: {
         blog: newBlog,
       },
@@ -26,7 +26,7 @@ export const getBlog = async (req, res) => {
     const blog = await Blog.findById(req.params.id);
 
     res.status(200).json({
-      status: "retrieved successfully",
+      status: "success",
       data: {
         blog,
       },
@@ -44,7 +44,7 @@ export const getAllBlog = async (req, res) => {
     const getBlogs = await Blog.find();
 
     res.status(200).json({
-      status: "all blogs",
+      status: "success",
       number: getBlogs.length,
       data: {
         blog: getBlogs,
@@ -62,8 +62,9 @@ export const deleteBlog = async (req, res) => {
   try {
     await Blog.findByIdAndDelete(req.params.id);
 
-    res.status(204).json({
-      status: "deleted successfully",
+    res.status(200).json({
+      status: "success",
+      message: "deleted successfully",
       data: null,
     });
   } catch (error) {
@@ -82,7 +83,7 @@ export const updateBlog = async (req, res) => {
     });
 
     res.status(200).json({
-      status: "updated successfully",
+      status: "success",
       data: {
         blog: updateBlogs,
       },

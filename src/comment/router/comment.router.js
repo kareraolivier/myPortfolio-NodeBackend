@@ -1,4 +1,5 @@
 import Express from "express";
+import { protect } from "./../../middlewares/middlewares.js";
 
 import {
   createComment,
@@ -7,7 +8,7 @@ import {
 
 const router = Express.Router();
 
-router.route("/").post(createComment);
-router.route("/").delete(deleteComment);
+router.route("/").post(protect, createComment);
+router.route("/:id").delete(protect, deleteComment);
 
 export default router;

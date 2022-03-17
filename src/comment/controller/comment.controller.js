@@ -7,7 +7,7 @@ export const createComment = async (req, res) => {
       comment: req.body.comment,
     });
     res.status(201).json({
-      status: "commented",
+      status: "success",
       data: {
         comment: newComment,
       },
@@ -24,7 +24,7 @@ export const deleteComment = async (req, res) => {
   try {
     await Comment.findByIdAndDelete(req.params.id);
     res.status(204).json({
-      status: "commented",
+      status: "success",
       data: null,
     });
   } catch (error) {

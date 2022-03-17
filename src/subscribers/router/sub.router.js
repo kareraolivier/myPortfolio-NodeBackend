@@ -1,4 +1,5 @@
 import Express from "express";
+import { protect } from "./../../middlewares/middlewares.js";
 
 import {
   createSubscription,
@@ -8,7 +9,10 @@ import {
 
 const router = Express.Router();
 
-router.route("/").get(getSubscription).post(createSubscription);
-router.route("/:id").delete(deleteSubscription);
+router
+  .route("/")
+  .get(protect, getSubscription)
+  .post(protect, createSubscription);
+router.route("/:id").delete(protect, deleteSubscription);
 
 export default router;
