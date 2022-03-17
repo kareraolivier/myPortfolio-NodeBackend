@@ -10,7 +10,7 @@ import { protect } from "./../../middlewares/middlewares.js";
 
 const router = Express.Router();
 
-router.route("/").get(protect, getAllEmail).post(protect, createEmail);
-router.route("/:id").get(protect, getSingleEmail).delete(protect, deleteEmail);
+router.route("/").get(getAllEmail).post(createEmail);
+router.route("/:id").get(getSingleEmail).delete(deleteEmail);
 
 export default router;
