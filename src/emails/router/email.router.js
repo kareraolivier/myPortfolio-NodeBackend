@@ -6,7 +6,6 @@ import {
   getSingleEmail,
   deleteEmail,
 } from "./../controller/email.controller.js";
-import { protect } from "./../../middlewares/middlewares.js";
 
 const router = Express.Router();
 
