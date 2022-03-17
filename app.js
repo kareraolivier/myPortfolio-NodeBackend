@@ -4,8 +4,10 @@ import blogRouter from "./src/blog/router/blog.router.js";
 import emailRouter from "./src/emails/router/email.router.js";
 import subscribRouter from "./src/subscribers/router/sub.router.js";
 import commentRouter from "./src/comment/router/comment.router.js";
+import cors from "cors";
 
 const app = express();
+app.use(cors());
 
 app.use(express.json());
 

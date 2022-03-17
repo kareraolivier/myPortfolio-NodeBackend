@@ -20,6 +20,7 @@ export const createUser = async (req, res) => {
 
     res.status(201).json({
       status: "success",
+      message: "hello",
       data: {
         user: newUser,
       },
