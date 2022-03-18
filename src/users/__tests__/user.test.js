@@ -1,8 +1,6 @@
 import request from "supertest";
 import app from "../../../";
 
-jest.setTimeout(newTimeout);
-
 describe("user tests", () => {
   describe("test signup", () => {
     let user, res;

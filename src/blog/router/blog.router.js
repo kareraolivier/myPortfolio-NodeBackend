@@ -11,7 +11,7 @@ import { protect } from "./../../middlewares/middlewares.js";
 
 const router = Express.Router();
 
-router.route("/").get(protect, getAllBlog).post(protect, createBlog);
+router.route("/").get(getAllBlog).post(protect, createBlog);
 router
   .route("/:id")
   .get(protect, getBlog)
