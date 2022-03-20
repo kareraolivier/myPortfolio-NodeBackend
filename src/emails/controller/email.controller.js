@@ -3,7 +3,6 @@ import Email from "./../model/email.model.js";
 export const createEmail = async (req, res) => {
   try {
     const newEmail = await Email.create({
-      fullName: req.body.fullName,
       email: req.body.email,
       message: req.body.message,
     });

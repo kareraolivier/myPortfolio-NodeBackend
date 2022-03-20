@@ -1,10 +1,6 @@
 import mongoose from "mongoose";
 
 const emailSchema = new mongoose.Schema({
-  fullName: {
-    type: String,
-    required: [true, "Enter your name"],
-  },
   email: {
     type: String,
     required: [true, "Enter your email"],
