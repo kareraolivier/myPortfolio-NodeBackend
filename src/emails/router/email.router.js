@@ -10,7 +10,7 @@ import {
 
 const router = Express.Router();
 
-router.route("/").get(protect, getAllEmail).post(createEmail);
+router.route("/").get(getAllEmail).post(createEmail);
 router.route("/:id").get(getSingleEmail).delete(protect, deleteEmail);
 
 export default router;
