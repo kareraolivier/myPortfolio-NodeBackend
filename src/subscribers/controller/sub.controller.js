@@ -41,7 +41,7 @@ export const getSubscription = async (req, res) => {
 export const deleteSubscription = async (req, res) => {
   try {
     await Subscriber.findByIdAndDelete(req.params.id);
-    res.status(204).json({
+    res.status(200).json({
       status: "success",
       message: "deleted",
       data: null,

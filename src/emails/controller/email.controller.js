@@ -59,13 +59,13 @@ export const getSingleEmail = async (req, res) => {
 export const deleteEmail = async (req, res) => {
   try {
     await Email.findByIdAndDelete(req.params.id);
-    res.status(204).json({
-      status: "deleted successfully",
+    res.status(200).json({
+      status: "success",
       data: null,
     });
   } catch (error) {
     res.status(404).json({
-      status: "not deleted",
+      status: "fail",
       error,
     });
   }

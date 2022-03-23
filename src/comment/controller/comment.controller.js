@@ -42,7 +42,7 @@ export const getAllComments = async (req, res) => {
 export const deleteComment = async (req, res) => {
   try {
     await Comment.findByIdAndDelete(req.params.id);
-    res.status(204).json({
+    res.status(200).json({
       status: "success",
       data: null,
     });
