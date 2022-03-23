@@ -27,7 +27,7 @@ router
   .post(createUser);
 router
   .route("/:id")
-  .get(protect, restrictTo("admin"), getUser)
+  .get(protect, getUser)
   .patch(protect, restrictTo("admin"), updateUser)
   .delete(protect, restrictTo("admin"), deleteUser);
 
