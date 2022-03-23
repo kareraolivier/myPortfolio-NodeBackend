@@ -21,13 +21,10 @@ const router = express.Router();
 
 router.post("/login", login);
 
-router
-  .route("/")
-  .get(protect, restrictTo("admin"), getAllUsers)
-  .post(createUser);
+router.route("/").get(getAllUsers).post(createUser);
 router
   .route("/:id")
-  .get(protect, getUser)
+  .get(getUser)
   .patch(protect, restrictTo("admin"), updateUser)
   .delete(protect, restrictTo("admin"), deleteUser);
 
