@@ -20,6 +20,25 @@ export const createComment = async (req, res) => {
   }
 };
 
+export const getAllComments = async (req, res) => {
+  try {
+    const getComments = await Comment.find();
+
+    res.status(200).json({
+      status: "success",
+      number: getComments.length,
+      data: {
+        Comment: getComments,
+      },
+    });
+  } catch (error) {
+    res.status(500).json({
+      status: "fail",
+      error,
+    });
+  }
+};
+
 export const deleteComment = async (req, res) => {
   try {
     await Comment.findByIdAndDelete(req.params.id);
