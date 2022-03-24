@@ -1,11 +1,12 @@
 import Comment from "./../model/comment.model.js";
 
 export const createComment = async (req, res) => {
+  if (!req.body.blog) req.body.blog = req.params.blogId;
+  if (!req.body.author) req.body.author = req.user._id;
+  console.log(req.user);
+
   try {
-    const newComment = await Comment.create({
-      fullName: req.body.fullName,
-      comment: req.body.comment,
-    });
+    const newComment = await Comment.create(req.body);
     res.status(201).json({
       status: "success",
       data: {

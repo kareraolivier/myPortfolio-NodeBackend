@@ -23,7 +23,7 @@ export const createBlog = async (req, res) => {
 
 export const getBlog = async (req, res) => {
   try {
-    const blog = await Blog.findById(req.params.id);
+    const blog = await Blog.findById(req.params.id).populate("comments");
 
     res.status(200).json({
       status: "success",
@@ -41,7 +41,10 @@ export const getBlog = async (req, res) => {
 
 export const getAllBlog = async (req, res) => {
   try {
-    const getBlogs = await Blog.find();
+    let filter = {};
+    if (req.params.blogId) filter = { blog: req.params.blogId };
+
+    const getBlogs = await Blog.find(filter);
 
     res.status(200).json({
       status: "success",
