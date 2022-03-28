@@ -9,6 +9,7 @@ export const createEmail = async (req, res) => {
     });
     res.status(201).json({
       status: "created successfully",
+      message: "hello",
       data: {
         email: newEmail,
       },
@@ -61,6 +62,7 @@ export const deleteEmail = async (req, res) => {
     await Email.findByIdAndDelete(req.params.id);
     res.status(200).json({
       status: "success",
+      message: "hello",
       data: null,
     });
   } catch (error) {

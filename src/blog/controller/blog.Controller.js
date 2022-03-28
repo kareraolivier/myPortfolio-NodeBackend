@@ -9,6 +9,7 @@ export const createBlog = async (req, res) => {
 
     res.status(201).json({
       status: "success",
+      message: "hello",
       data: {
         blog: newBlog,
       },

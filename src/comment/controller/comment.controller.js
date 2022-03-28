@@ -9,6 +9,7 @@ export const createComment = async (req, res) => {
     const newComment = await Comment.create(req.body);
     res.status(201).json({
       status: "success",
+      message: "hello",
       data: {
         comment: newComment,
       },
